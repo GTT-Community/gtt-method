@@ -1,7 +1,10 @@
 # GTT — Canonical v2.1
 
-Status: CURRENT
-Canonical status: RELEASED
+> **SUPERSEDED by GTT 3.0 on 2026-10-28** — see [`GTT-CANONICAL-v3.0.md`](GTT-CANONICAL-v3.0.md).
+> This file is kept at its path so existing references keep working. It is no longer an authority.
+
+Status: SUPERSEDED
+Canonical status: RELEASED (historical)
 Generation: GTT 2.1
 Purpose: Canonical definition of GTT 2.1
 

@@ -6,6 +6,8 @@
 **Purpose:** Reserved canonical definition for the GTT 4 generation.
 
 > This document describes the anticipated long-term direction for GTT 4. It does not define capabilities as currently released GTT functionality.
+>
+> It builds on GTT 3.0 ([`../GTT-CANONICAL-v3.0.md`](../GTT-CANONICAL-v3.0.md)). Candidate areas not yet covered by 3.0: multi-agent coordination, organization-level governance across many repositories, and governance analytics.
 
 ---
 

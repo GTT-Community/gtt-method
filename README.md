@@ -1,95 +1,48 @@
 # GTT Method
 
-**Governed methodology for AI-assisted software development.**
-
-GTT provides a governance layer for software development assisted by AI agents and ADEs. It establishes the context, evidence, architectural intent, decision boundaries, and controlled change mechanisms required to keep AI-assisted development aligned with human decisions and project intent.
+**GTT — Governance Through Thinking.** A governed methodology for AI-assisted software development.
 
 > **Agent reasoning ≠ Change authorization.**
 
-## What is GTT?
-
-GTT is a methodology, not an AI agent framework.
-
-It can govern development workflows using different AI agents, models, tools, and AI Development Environments (ADEs), without depending on a specific vendor or technology.
-
-GTT establishes a clear separation between:
+AI agents write code faster than humans can review it. Without a governed reference, the code becomes the specification and architectural intent erodes one reasonable-looking change at a time. GTT gives the project a single source of truth that the human ratifies. Agents reason over it, propose changes to it and build freely inside it. Only the human changes it.
 
 ```text
-Evidence
-   ↓
-Grounding
-   ↓
-Reasoning
-   ↓
-Proposal
-   ↓
-Human Decision
-   ↓
-Governed Change
+Human decides → GTT governs → Agent/ADE executes within the boundary
+Agent proposes → Human decides → GTT applies
 ```
 
-## Core Principles
+GTT is a methodology, not an agent framework. It works with any agent or ADE (Claude Code, Kiro, Copilot, Cursor, Antigravity, Codex, OpenHands…) without depending on one.
 
-- **Context before reasoning**
-- **Evidence before assumption**
-- **Human decision boundary**
-- **Architectural intent**
-- **Provenance and traceability**
-- **Deterministic governance where possible**
-- **Agent and ADE independence**
-- **Controlled change**
+## How it works
 
-## GTT 2.1
+1. **Setup:** choose the participating ADEs, how much GTT may do without asking (autonomy profile), and how the solution is organized (development method).
+2. **Elicitation:** declare your design documents, or answer a guided questionnaire.
+3. **THINK:** an agent proposes the governed context and one design per Epic, with every statement traced to evidence or marked as a gap, conflict or proposal.
+4. **Freeze:** you ratify it.
+5. **Build:** the agent works freely. GTT observes drift and blocks only what you declared blocking.
+6. **Change:** you write a change request; the agent proposes; you decide; GTT applies it and you freeze again.
 
-The current canonical generation is **GTT 2.1**.
+## This repository
 
-GTT 2.1 includes:
+| File | What it is |
+|---|---|
+| [`GTT-CANONICAL.md`](GTT-CANONICAL.md) | **Start here.** Names the canonical generation in force |
+| [`GTT-CANONICAL-v3.0.md`](GTT-CANONICAL-v3.0.md) | **GTT 3.0: the current canonical definition** |
+| [`GTT-CANONICAL-v2.1.md`](GTT-CANONICAL-v2.1.md) | GTT 2.1: superseded, kept for existing references |
+| [`GLOSSARY.md`](GLOSSARY.md) | Canonical terms: user terms, internal terms, deprecated terms |
+| [`CONFORMANCE.md`](CONFORMANCE.md) | What the reference implementation (the GTT suite) implements, per capability |
+| [`VERSIONING.md`](VERSIONING.md) | Methodology generation vs suite version |
+| [`CHANGELOG.md`](CHANGELOG.md) | Changes between generations |
+| [`planned/`](planned/) | Future generations (not released) |
 
-- Governed Context
-- Evidence Boundary
-- Evidence Dossier
-- Architectural Intent
-- Human Decision Boundary
-- Governed State and Freeze
-- Proposals
-- Session Continuity
-- GTTGuard
-- CLI-oriented governance
-- ADE / Agent independence
+The canon defines **what GTT is**. The reference implementation demonstrates it:
 
-### GTTGuard
+- [GTT Bootstrap](https://github.com/GTT-Community/gtt-bootstrap): the engine and agent contract installed into a project;
+- [GTT CLI](https://github.com/GTT-Community/gtt-cli): install, setup, validation, freeze and the change flow;
+- [gtt-method.org](https://gtt-method.org): documentation and quickstart.
 
-GTTGuard establishes a governance boundary around protected files, classes, and methods.
-
-> **User proposes → GTT implements → Agent respects.**
-
-Protected changes can be routed through `gtt/proposals/` for human approval.
-
-GTTGuard is a governance mechanism, not an operating-system security mechanism.
-
-## Canonical Specification
-
-The canonical definition of each GTT generation is maintained in its versioned canonical document:
-
-- [`GTT-CANONICAL-v2.1.md`](GTT-CANONICAL-v2.1.md) — **Current**
-- [`GTT-CANONICAL-v3.md`](GTT-CANONICAL-v3.md) — **Planned**
-- [`GTT-CANONICAL-v4.md`](GTT-CANONICAL-v4.md) — **Planned**
-
-[`GTT-CANONICAL.md`](GTT-CANONICAL.md) identifies the current canonical generation.
-
-## Repository Purpose
-
-This repository contains the **GTT methodology and its canonical specifications**.
-
-Implementation projects, CLI tooling, websites, manuals, and other integrations may consume and implement the methodology, but should remain aligned with its canonical definition.
-
-## Project Status
-
-**Current generation:** GTT 2.1  
-**Status:** Released
-
-GTT 3 and GTT 4 are planned future generations and are not yet released.
+When an implementation, the website or a manual contradicts the canon, the contradiction is surfaced and resolved, not ignored. Whether a canonical capability is available in a given release is stated only in `CONFORMANCE.md`.
 
 ## License
 
-GTT is released under the **Apache License 2.0**.
+This repository is licensed under the Apache License 2.0. See [`LICENSE`](LICENSE).
